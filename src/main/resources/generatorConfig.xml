@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
     <!-- 此处要用绝对路径 引入mysql包，maven中不管用 -->
-    <classPathEntry location="E:/Workspace/maven/testMyBatisGenerator/lib/mysql-connector-java-5.1.30.jar" />
+    <classPathEntry location="E:/m2/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar" />
 
     <context id="context1">
         <commentGenerator>
@@ -13,21 +13,21 @@
         </commentGenerator>
 
         <!--数据库链接URL，用户名、密码 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/orochi"
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/test"
                         userId="root" password="111111"/>
         <javaTypeResolver >
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
         <!-- 生成模型的包名和位置 此处要用绝对路径-->
-        <javaModelGenerator targetPackage="com.hong.orochi.common.model" targetProject="E:/Workspace/Idea/generator-mybatis/src/main/java"/>
+        <javaModelGenerator targetPackage="com.hong.demo.domain" targetProject="E:/mygit/generator-mybatis/src/main/java"/>
         <!-- 生成映射文件的包名和位置-->
-        <sqlMapGenerator targetPackage="com.hong.orochi.common.mapper.impl" targetProject="E:/Workspace/Idea/generator-mybatis/src/main/java"/>
+        <sqlMapGenerator targetPackage="com.hong.demo.mapper" targetProject="E:/mygit/generator-mybatis/src/main/resources"/>
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator targetPackage="com.hong.orochi.common.mapper" targetProject="E:/Workspace/Idea/generator-mybatis/src/main/java" type="XMLMAPPER"/>
+        <javaClientGenerator targetPackage="com.hong.demo.mapper" targetProject="E:/mygit/generator-mybatis/src/main/java" type="XMLMAPPER"/>
 
         <!-- 要生成哪些表-->
 
-        <table tableName="advertisement" domainObjectName="Advertisement" enableCountByExample="false"
+        <table tableName="user" domainObjectName="User" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
 
