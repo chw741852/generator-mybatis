@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- 此处要用绝对路径 引入mysql包，maven中不管用 -->
+    <classPathEntry location="/usr/local/apache-maven-3.3.9/repo/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar" />
+
+    <context id="mysql">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--数据库链接URL，用户名、密码 -->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.241.10.105:3306/db_mochui_ssrp" userId="worker" password="M3N7x2a7v3"/>-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/db_security" userId="root" password="111111"/>
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置 此处要用绝对路径-->
+        <javaModelGenerator targetPackage="com.hong.security.domain" targetProject="/Users/caihongwei/Documents/Development/MyGit/generator-mybatis/src/main/java"/>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="com.hong.security.mapper" targetProject="/Users/caihongwei/Documents/Development/MyGit/generator-mybatis/src/main/resources"/>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator targetPackage="com.hong.security.mapper" targetProject="/Users/caihongwei/Documents/Development/MyGit/generator-mybatis/src/main/java" type="XMLMAPPER"/>
+
+        <!-- 要生成哪些表-->
+        <table tableName="user" domainObjectName="User" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"></table>
+
+    </context>
+</generatorConfiguration>
