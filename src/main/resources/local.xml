@@ -13,7 +13,6 @@
         </commentGenerator>
 
         <!--数据库链接URL，用户名、密码 -->
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.241.10.105:3306/db_mochui_ssrp" userId="worker" password="M3N7x2a7v3"/>-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/db_security" userId="root" password="111111"/>
         <javaTypeResolver >
             <property name="forceBigDecimals" value="false" />
