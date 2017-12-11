@@ -11,6 +11,7 @@
     <url>http://maven.apache.org</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mbg.config.xml>${basedir}/src/main/resources/mybatis/generatorConfig.xml</mbg.config.xml>
     </properties>
 
     <dependencies>
@@ -88,6 +89,10 @@
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.2</version>
+                <!-- 指定mybatis配置文件路径 -->
+                <configuration>
+                  <configurationFile>${mbg.config.xml}</configurationFile>
+                </configuration>
             </plugin>
         </plugins>
     </build>
